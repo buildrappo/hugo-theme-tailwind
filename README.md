@@ -121,6 +121,12 @@ link = 'https://www.facebook.com/'
 
 ## Development
 
+Run `bun install`. Then, `bun dev-hugo` to start a development server to test the theme.
+
+### Commands
+
+
+
 ### Extend functionality
 
 The theme folder structure is as follows:
