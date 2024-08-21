@@ -1,4 +1,4 @@
-{{ if (or .Params.categories .Params.tags) }}
+{{ if (or .Params.categories .Params.tags .Params.authors) }}
 <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
   {{ if .Params.categories }} {{ range (.GetTerms "categories") }}
   <li>
