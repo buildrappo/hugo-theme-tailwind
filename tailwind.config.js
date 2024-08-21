@@ -1,40 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-  content: [
-    "./themes/**/layouts/**/*.html",
-    "./layouts/**/*.html"
-  ],
+  darkMode: "class",
+  content: ["./themes/**/layouts/**/*.html", "./layouts/**/*.html"],
   theme: {
     extend: {
       typography: {
         quoteless: {
           css: {
-            'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
-            'code::before': { content: 'none' },
-            'code::after': { content: 'none' },
-            '> ul > li > input:first-child': {
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
+            "code::before": { content: "none" },
+            "code::after": { content: "none" },
+            "> ul > li > input:first-child": {
               marginTop: 0,
             },
-            '> ul > li > input:last-child': {
+            "> ul > li > input:last-child": {
               marginBottom: 0,
             },
-            '> ol > li > input:first-child': {
+            "> ol > li > input:first-child": {
               marginTop: 0,
             },
-            '> ol > li > input:last-child': {
+            "> ol > li > input:last-child": {
               marginBottom: 0,
             },
-            '.gist .highlight tbody tr': {
+            ".gist .highlight tbody tr": {
               borderWidth: 0,
             },
           },
         },
       },
     },
+    colors: {
+      white: "#FFFFFFF",
+      blurple: {
+        100: "#9665FF",
+      },
+    },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
