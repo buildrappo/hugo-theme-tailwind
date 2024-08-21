@@ -1,5 +1,6 @@
-(function() {
+(function () {
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  /*
   const themeToggle = document.querySelector('.darkmode-toggle input');
   const light = 'light';
   const dark = 'dark';
@@ -20,24 +21,24 @@
       localStorage.theme = light;
       document.documentElement.classList.remove(dark);
     }
-  });
+  });*/
 
-  const navbarMenuToggle = document.getElementById('navbar-menu-toggle');
-  const navbarMenu = document.getElementById('navbar-menu');
-  const navbarLangToggle = document.getElementById('navbar-lang-toggle');
-  const navbarLang = document.getElementById('navbar-lang');
+  const navbarMenuToggle = document.getElementById("navbar-menu-toggle");
+  const navbarMenu = document.getElementById("navbar-menu");
+  const navbarLangToggle = document.getElementById("navbar-lang-toggle");
+  const navbarLang = document.getElementById("navbar-lang");
 
-  document.addEventListener('click', function (event) {
+  document.addEventListener("click", function (event) {
     const target = event.target;
     if (navbarMenuToggle.contains(target)) {
-      navbarLang && navbarLang.classList.add('hidden');
-      navbarMenu && navbarMenu.classList.toggle('hidden');
+      navbarLang && navbarLang.classList.add("hidden");
+      navbarMenu && navbarMenu.classList.toggle("hidden");
     } else if (navbarLangToggle.contains(target)) {
-      navbarMenu && navbarMenu.classList.add('hidden');
-      navbarLang && navbarLang.classList.toggle('hidden');
+      navbarMenu && navbarMenu.classList.add("hidden");
+      navbarLang && navbarLang.classList.toggle("hidden");
     } else {
-      navbarMenu && navbarMenu.classList.add('hidden');
-      navbarLang && navbarLang.classList.add('hidden');
+      navbarMenu && navbarMenu.classList.add("hidden");
+      navbarLang && navbarLang.classList.add("hidden");
     }
   });
 })();
