@@ -1,4 +1,4 @@
-<div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+<div class="glass w-full top-0 z-50 fixed flex flex-row justify-between max-w-4xl lg:max-w-5xl">
   <div class="flex-none ml-2 md:ml-0">
     <a href="{{ relLangURL "" }}" class="">
       <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="{{ .Site.Params.header.logo | relURL }}" alt="logo">
@@ -48,19 +48,16 @@
       </i>
     </a>
   </div>
-  <!--
-  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="{{ T "header.darkmode_toggle" }}">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="{{ T "header.darkmode_toggle" }}">
-      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
-        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
-          {{ partial "icon.html" "brightness-down" }}
-        </i>
-        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
-          {{ partial "icon.html" "moon-stars" }}
-        </i>
-      </div>
-    </label>
-  </div>
-   -->
 </div>
+
+<style>
+.glass {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px;
+    border-color: gray;
+}
+</style>

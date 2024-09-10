@@ -1,39 +1,55 @@
-<section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row">
-    {{ partial "social_media.html" . }}
+<section class="bg-blurple-950 ftr bg-fixed bg-bottom !text-white">
+  <div class="py-6">
+    <div class="flex-col items-center justify-between md:flex-row">
+      <div class="w-full" id="navbar-default">
+        <ul
+          class="text-s flex flex-col justify-center gap-3 sm:flex-row sm:items-center sm:text-lg md:flex-row md:border-0"
+        >
+          <li>
+            <a
+              href="https://www.buildrappo.com/become-champion"
+              class="hover:text-blurple md:bg-transparent block rounded text-[#FFFFFF] text-white md:p-4"
+            >
+              About us
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://blog.buildrappo.com/"
+              class="hover:text-blurple md:bg-transparent block rounded text-[#FFFFFF] text-white md:p-4"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.buildrappo.com/privacy"
+              class="hover:text-blurple md:bg-transparent block rounded text-[#FFFFFF] text-white md:p-4"
+            >
+              Privacy policy
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.buildrappo.com/terms"
+              class="hover:text-blurple md:bg-transparent block rounded text-[#FFFFFF] text-white md:p-4"
+            >
+              Terms of service
+            </a>
+          </li>
+        </ul>
+        <div class="mt-3 sm:text-center" style="color: white">
+          {{- $CurrentYear := now.Format "2006" -}} &copy; {{ $CurrentYear }}
+          Rappo - All rights reserved.
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="grow"></div>
-  <div class="flex flex-row">
-    {{- $CopyrightSign := (printf `<i class="h-6 w-6 flex-none">%s</i>` (partial "icon.html" "copyright")) -}}
-    {{- $SinceYear := .Site.Params.footer.since -}}
-    {{- $CurrentYear := now.Format "2006" -}}
-    {{- $Copyright := .Site.Copyright -}}
-
-    {{ if and (.Site.Params.footer.since)
-      (ne .Site.Params.footer.since (int (now.Format "2006")))
-    }}
-    {{ T "footer.copyright_with_since"  (dict
-      "CopyrightSign" $CopyrightSign
-      "SinceYear" $SinceYear
-      "CurrentYear" $CurrentYear
-      "Copyright" $Copyright
-    ) | safeHTML }}
-    {{ else }}
-    {{ T "footer.copyright_wo_since"  (dict
-      "CopyrightSign" $CopyrightSign
-      "CurrentYear" $CurrentYear
-      "Copyright" $Copyright
-    ) | safeHTML }}
-    {{ end }}
-  </div>
-  {{ if .Site.Params.footer.poweredby }}
-  <div class="flex flex-row">
-    {{- $Generator := `<a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a>` -}}
-    {{- $Theme := `<a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>` -}}
-    {{- $Heart := `<span class="text-red-600">&hearts;</span>` }}
-    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
-      {{ T "footer.powered_by" (dict "Generator" $Generator "Theme" $Theme "Heart" $Heart ) | safeHTML }}
-    </span>
-  </div>
-  {{ end }}
 </section>
+
+<style>
+  .ftr {
+    margin-top: 2rem;
+    width: 100%;
+  }
+</style>
